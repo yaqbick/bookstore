@@ -19,6 +19,14 @@
     </tr>
   </thead>
   <tbody>
+  <tr><td><input  id="book_title"></td><td><select id="book_author"></select></td></tr>
+  {% for book in books %}
+    <tr><td>* {{ book}}</td><td>
+  {% else %}
+  No users have been found.
+  {% endfor %}
+</select>
+
 <?php
 // use app\database\DbService;
 

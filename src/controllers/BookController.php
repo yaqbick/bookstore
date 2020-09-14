@@ -2,19 +2,12 @@
 
 namespace app\controllers;
 
-require_once 'vendor/autoload.php';
-
-
+use app\services\BookService;
 
 class BookController
 {
-    public static function index()
+    public function index()
     {
-        $books = DbService::getAllBooks();
-        $authors = DbService::getAllAuthors();
-        $publishers = DbService::getAllPublishers();
-        $loader = new \Twig\Loader\FilesystemLoader($_SERVER['DOCUMENT_ROOT'].'/bookstore/src/views');
-        $twig = new \Twig\Environment($loader);
-        echo $twig->render('Books.html.twig', ['name' => 'Fabien']);
+        return BookService::view();
     }
 }
