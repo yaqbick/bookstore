@@ -8,6 +8,8 @@ class BookController
 {
     public function index()
     {
-        return BookService::view();
+        $bookService = new BookService();
+
+        return $bookService->view();
     }
 }

@@ -15,6 +15,7 @@ jQuery(document).ready(function ($) {
         },
         "json"
       );
+      console.log(data);
       alert('pomyślnie usunięto książkę');
     });
       $(".add_button").on("click", function (event) {

@@ -19,41 +19,42 @@
     </tr>
   </thead>
   <tbody>
-  <tr><td><input  id="book_title"></td><td><select id="book_author"></select></td></tr>
+  <tr>
+    <td><input  id="book_title"></td>
+    <td>
+      <select id="book_author">
+      {% for book in books %}
+        <option value = {{book.id}}>{{book.title}}</option>
+      {% else %}
+        Brak wyników
+      {% endfor %}
+      </select>
+    </td>
+    <td>
+      <select id="book_publisher">
+      {% for book in books %}
+        <option value = {{book.hasPublisher.id}}>{{book.hasPublisher.name}}</option>
+      {% else %}
+        Brak wyników
+      {% endfor %}
+      </select>
+    </td>
+    <td>
+      <button name="delete_buttton" class="btn btn-success add_button">+</button>
+    </td>
+  </tr>
   {% for book in books %}
-    <tr><td>* {{ book}}</td><td>
+  <tr>
+    <td>{{ book.title}}</td>
+    <td></td>
+    <td>{{ book.hasPublisher.name}}</td>
+    <td><button  value={{book.id}} name="delete_buttton" class="btn btn-danger delete_button">X</button></td></tr>
+  </tr>
   {% else %}
-  No users have been found.
+  Brak wyników
   {% endfor %}
 </select>
-
-<?php
-// use app\database\DbService;
-
-// $books = DbService::getAllBooks();
-// // var_dump($books);
-// $authors = DbService::getAllAuthors();
-// $publishers = DbService::getAllPublishers();
-// $bookInput = '<tr><td><input  id="book_title"></td><td><select id="book_author">';
-// foreach ($authors as $author) {
-//     $bookInput .= '<option value="'.$author['id'].'">'.$author['firstname'].' '.$author['lastname'].'</option>';
-// }
-// $bookInput .= '</select></td><td><select id="book_publisher">';
-// foreach ($publishers as $publisher) {
-//     $bookInput .= '<option value="'.$publisher['id'].'">'.$publisher['name'].'</option>';
-// }
-// $bookInput .= '</select></td><td><button name="delete_buttton" class="btn btn-success add_button">+</button></td></tr>';
-// echo $bookInput;
-// foreach ($books as $book) {
-//     echo '<tr><td>'.$book['title'].'</td>
-//     <td>'.$book['firstname'].' '.$book['lastname'].'</td>
-//     <td>'.$book['name'].'</td>
-//     <td><button  value='.$book['book_id'].' name="delete_buttton" class="btn btn-danger delete_button">X</button></td></tr>';
-// }
-// echo '</form>';
-?>
-
-  </tbody>
+</tbody>
 </table>
     </div>
     <div class="col-sm">

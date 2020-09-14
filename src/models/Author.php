@@ -4,7 +4,7 @@ namespace app\models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Publisher extends Eloquent
+class Author extends Eloquent
 {
     /**
      * The attributes that are mass assignable.
@@ -12,11 +12,11 @@ class Publisher extends Eloquent
      * @var array
      */
     protected $fillable = [
-           'name',
+           'firstname', 'lastname',
        ];
 
-    public function book()
-    {
-        return $this->belongsTo('app\models\Book');
-    }
+    // public function hasPublisher()
+    // {
+    //     return $this->hasOne('app\models\Publisher', 'id');
+    // }
 }

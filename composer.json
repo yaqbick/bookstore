@@ -3,10 +3,12 @@
     "psr-4": {
       "app\\": "src/"
     },
-    "require": {
-      "fzaninotto/faker": "^1.9",
-      "twig/twig": "^3.0",
-      "illuminate/database": "^8.1"
-    }
+
+  "require": {
+    "illuminate/database": "^8.2",
+    "fzaninotto/faker": "^1.9",  
+    "twig/twig": "3.0"
   }
+  }
+
 }
