@@ -1,12 +1,11 @@
 {
-    "autoload": {
-      "psr-4": {
-        "app\\": "src/"
-      }
-    },
-    "require": {
-        "tareq1988/wp-eloquent": "dev-master",
-        "fzaninotto/faker": "^1.9"
+  "autoload": {
+    "psr-4": {
+      "app\\": "src/"
     }
-
+  },
+  "require": {
+    "fzaninotto/faker": "^1.9",
+    "twig/twig": "^3.0"
   }
+}
