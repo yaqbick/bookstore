@@ -1,0 +1,14 @@
+Instrukcja obsługi
+
+1. Uruchamianie aplikacji
+   - zainstaluj XAMPP/WAMP Server
+   - umieść na nim folder bookstore
+   - wejdź na localhost/phpmyadmin w przegladarce i utwórz bazę danych 'bookstore'
+   - otwórz terminal w bookstore i wykonaj polecenie php run.php 
+
+2. Korzystanie z aplikacji
+   Routing obsługuje 2 adresy url:
+    /bookstore/books - panel dodawania/usuwania książek
+    /bookstore/raport - lista klientów z zaległościami w oddawaniu książek
+
+    W panelu books można dodawać bądź usuwać książki
