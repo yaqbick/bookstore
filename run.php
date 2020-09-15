@@ -14,6 +14,9 @@ use app\database\migrations\StockTableMigration;
 use app\database\seeds\AuthorSeeder;
 use app\database\seeds\BookSeeder;
 use app\database\seeds\PublisherSeeder;
+use app\database\seeds\CustomerRentsSeeder;
+use app\database\seeds\CustomerSeeder;
+use app\models\Book;
 
 $AuthorsTableMigration = new AuthorsTableMigration();
 $PublishersTableMigration = new PublishersTableMigration();
@@ -34,3 +37,7 @@ $migrations = [$AuthorsTableMigration, $PublishersTableMigration, $CustomersTabl
 // $bookSeeder->seed();
 // $authorSeeder = new AuthorSeeder();
 // $authorSeeder->seed();
+// $customerSeeder = new CustomerSeeder();
+// $customerSeeder->seed();
+// $CusotmerRentsSeeder = new CustomerRentsSeeder();
+// $CusotmerRentsSeeder->seed();

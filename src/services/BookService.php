@@ -4,8 +4,9 @@ namespace app\services;
 
 use app\models\Book;
 use app\models\Publisher;
+use app\services\Service;
 
-class BookService
+class BookService implements Service
 {
     public function view()
     {
@@ -18,6 +19,7 @@ class BookService
 
     public function delete($id)
     {
+        require 'bootstrap.php';
         $book = Book::find($id);
         $book->delete();
     }

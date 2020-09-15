@@ -1,0 +1,60 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/bookstore/src/assets/js/ajax.js"></script>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">firstname</th>
+      <th scope="col">lastname</th>
+        <th scope="col">book</th>
+      {# <th scope="col">startdate</th>
+      <th scope="col">enddate</th> #}
+      <th scope="col">cash penalty</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for rent in rents %}
+          <tr>
+          <td>{{rent.firstname}}</td>
+          <td>{{rent.lastname}}</td>
+          <td>  
+            {% for item in rent.hasCustomerRent%}
+            {{item.book_id}}<br><br>
+            {% endfor %}
+          </td>
+          {# <td>  
+            {% for item in rent.hasCustomerRent%}
+            {{item.enddate}}<br><br>
+            {% endfor %}
+          </td> #}
+          <td>  
+            {% for item in rent.hasCustomerRent%}
+            {{item.cash_penalty}} zł<br><br>
+            {% endfor %}
+          </td>
+ 
+         
+          {# <td>  {{rent.startdate}}</td>
+           <td>  {{rent.enddate}}</td>
+           <td>  {{rent.cash_penalty}}</td> #}
+        </tr>
+      {% else %}
+        Brak wyników
+      {% endfor %}
+  </tbody>
+</table>
+    </div>
+    <div class="col-sm">
+   
+    </div>
+  </div>
+</div>

@@ -15,4 +15,5 @@ $capsule->addConnection([
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 require 'routing.php';
+
 require_once 'vendor\fzaninotto\faker\src\autoload.php';

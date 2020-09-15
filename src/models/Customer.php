@@ -4,7 +4,7 @@ namespace app\models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Book extends Eloquent
+class Customer extends Eloquent
 {
     /**
      * The attributes that are mass assignable.
@@ -12,15 +12,11 @@ class Book extends Eloquent
      * @var array
      */
     protected $fillable = [
-           'title', 'publisher_id', 'cover', 'price',
+           'firstname', 'lastname','email','phone','address','locked'
        ];
 
-    public function hasPublisher()
-    {
-        return $this->hasOne('app\models\Publisher', 'id');
-    }
     public function hasCustomerRent()
     {
-        return $this->hasMany('app\models\CustomerRent', 'id');
+        return $this->hasMany('app\models\CustomerRent', 'customer_id');
     }
 }
