@@ -1,14 +1,12 @@
 {
   "autoload": {
     "psr-4": {
-      "app\\": "src/"
+      "App\\": "src/"
     },
-
-  "require": {
-    "illuminate/database": "^8.2",
-    "fzaninotto/faker": "^1.9",  
-    "twig/twig": "3.0"
+    "require": {
+      "illuminate/database": "^8.2",
+      "fzaninotto/faker": "^1.9",
+      "twig/twig": "3.0"
+    }
   }
-  }
-
 }
