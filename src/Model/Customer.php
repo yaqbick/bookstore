@@ -17,6 +17,6 @@ class Customer extends Eloquent
 
     public function hasCustomerRent()
     {
-        return $this->hasMany('App\Model\CustomerRent', 'id');
+        return $this->hasMany('App\Model\CustomerRent', 'customer_id');
     }
 }
